@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/jobs")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://reverse-resume-generator-frontend.onrender.com")
 public class JobController {
 
     @Autowired

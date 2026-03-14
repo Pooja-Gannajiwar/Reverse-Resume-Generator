@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://reverse-resume-generator-frontend.onrender.com")
 public class UserController {
 
     @Autowired
