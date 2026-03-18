@@ -11,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://reverse-resume-generator-frontend.onrender.com")
+@CrossOrigin(origins = "*")
 public class ResumeController {
 
     @Autowired

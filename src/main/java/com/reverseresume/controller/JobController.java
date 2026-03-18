@@ -1,6 +1,7 @@
 package com.reverseresume.controller;
 
 import com.reverseresume.model.Job;
+import com.reverseresume.repository.JobRepository;
 import com.reverseresume.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/jobs")
-@CrossOrigin(origins = "https://reverse-resume-generator-frontend.onrender.com")
+@CrossOrigin(origins = "*")
 public class JobController {
 
     @Autowired
     private JobService jobService;
-
+    private final JobRepository jobRepository = null;
+    
     @GetMapping
     public ResponseEntity<List<Job>> getAllJobs() {
         return ResponseEntity.ok(jobService.getAllJobs());
@@ -34,5 +36,10 @@ public class JobController {
     @PostMapping
     public ResponseEntity<Job> createJob(@RequestBody Job job) {
         return ResponseEntity.ok(jobService.createJob(job));
+    }
+    @DeleteMapping("/all")
+    public String deleteAllJobs() {
+        jobService.deleteAllJobs();
+        return "All jobs deleted successfully";
     }
 }

@@ -29,4 +29,10 @@ public class JobService {
     public Job createJob(Job job) {
         return jobRepository.save(job);
     }
+
+	public void deleteAllJobs() {
+		 jobRepository.deleteAll();
+		// TODO Auto-generated method stub
+		
+	}
 }
